@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+	<title>Slate | tahins.me</title>
+
+	<style type="text/css">
+		* { box-sizing: border-box; }
+
+		body {
+			/*background: #042029;*/
+			background: #282828;
+			margin: 0;
+		}
+
+		textarea {
+			display: block;
+			background: transparent;
+			border: none;
+			width: 100vw;
+			max-width: 800px;
+			height: 100vh;
+			margin: 0 auto;
+			font-family: monospace;
+			/*color: #278f83;*/
+			color: #f8f8f8;
+			padding: 4vw 5vw;
+			font-size: 18px;
+			line-height: 1.5;
+			outline:0px;
+			resize: none;
+		}
+
+		textarea::-moz-selection { 
+			background-color: #5acfbc;
+		}
+		textarea::selection { 
+			background-color: #5acfbc;
+		}
+
+		::-webkit-input-placeholder {
+		   color: #5acfbc;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		   color: #5acfbc;  
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		   color: #5acfbc;  
+		}
+
+		:-ms-input-placeholder {  
+		   color: #5acfbc;  
+		}
+
+	</style>
+
+</head>
+<body>
+
+<textarea autofocus noresize placeholder="Write here ..."></textarea>
+
+<script type="text/javascript">
+	(function() {
+
+		if(typeof(Storage) !== "undefined") {
+			if (localStorage.getItem("text") !== "") {
+				document.querySelector('textarea').value = localStorage.getItem("text");
+			}
+
+			document.querySelector('textarea').onkeyup = function () {
+				localStorage.setItem("text", document.querySelector('textarea').value);
+			};
+		}
+
+	})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
